@@ -3,6 +3,10 @@ const Workout = require('../models/workoutModel');
 const { getAllWorkouts, getWorkout, createWorkout, deleteWorkout, updateWorkout } = require('../controllers/workoutController');
 const router = express.Router();
 
+const  requireAuth = require('../middlewares/requireAuth')
+router.use(requireAuth);
+
+
 /**
  * Route : /api/workouts
  * Method : GET
